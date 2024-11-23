@@ -1,2 +1,128 @@
 include:
   - .well-known
+
+page_title                                : House Manager
+
+ios_app_id                                : 6569254568
+ios_app_country                           : us
+
+appstore_link                             : https://apps.apple.com/app/apple-store/id6569254568
+privacy_policy_link                       : https://house-app.com/policies
+presskit_download_link                    : assets/Progress_Press_Kit.zip
+
+app_icon                                  : assets/appicon.png
+app_name                                  : House Manager
+app_price                                 : Free
+app_description                           : House Manager is an app for iOS & macOS designed to help keep track of progress towards goals. Perfect for tracking almost anything - distance, money, time, weight, and more! Stay on target with history charts showing your recent trends!
+
+enable_smart_app_banner                   : true
+
+your_name                                 : Shayes Apps
+your_link                                 : https://www.shayesapps.com
+email_address                             : support@shayesapps.com
+facebook_username                         : shayesapps
+instagram_username                        : shayesapps
+youtube_username                          : shayesapps
+mastodon_link                             : https://indieapps.space/@shayesapps
+
+features                                  :
+
+  - title                                 : Beautiful Design
+    description                           : Intuitive layout puts progress tracking right at your fingertips
+    fontawesome_icon_name                 : palette
+
+  - title                                 : Widgets
+    description                           : Powerful widgets available right on your Home Screen or Lock Screen
+    fontawesome_icon_name                 : th-large
+
+  - title                                 : Shortcuts
+    description                           : Siri shortcuts integration to unlock even more possibilities
+    fontawesome_icon_name                 : magic
+
+  - title                                 : History
+    description                           : See trends over time and projected completion dates
+    fontawesome_icon_name                 : chart-line
+
+  - title                                 : Automatic Reset
+    description                           : Set trackers to reset every day, week, month, or year
+    fontawesome_icon_name                 : redo
+
+  - title                                 : Quick Actions
+    description                           : Customizable quick actions for each tracker
+    fontawesome_icon_name                 : tachometer-alt
+
+  - title                                 : Smart Formatting
+    description                           : Intelligent formatting for currencies, times, weights, and distances
+    fontawesome_icon_name                 : star
+
+  - title                                 : Categories
+    description                           : Sort your trackers into lists
+    fontawesome_icon_name                 : list
+
+  - title                                 : Multiple Device Support
+    description                           : Available for iOS & macOS devices with seamless syncing
+    fontawesome_icon_name                 : sync
+
+# Theme Settings
+topbar_color                              : "#000000"
+topbar_transparency                       : 0.1
+topbar_title_color                        : "#ffffff"
+
+cover_image                               : assets/headerimage.png                    # Replace with alternative image path or image URL.
+cover_overlay_color                       : "#363b3d"
+cover_overlay_transparency                : 0.8
+
+device_color                              : black                                     # Set to: blue, black, yellow, coral or white.
+
+body_background_color                     : "#ffffff"
+
+link_color                                : "#1d63ea"
+
+app_title_color                           : "#ffffff"
+app_price_color                           : "#ffffff"
+app_description_color                     : "#ffffff"
+
+feature_title_color                       : "#000000"
+feature_text_color                        : "#666666"
+
+feature_icons_foreground_color            : "#1d63ea"
+feature_icons_background_color            : "#e6e6e6"
+
+social_icons_foreground_color             : "#666666"
+social_icons_background_color             : "#e6e6e6"
+
+footer_text_color                         : "#666666"
+
+
+
+
+
+
+
+
+
+
+
+
+
+####################################################
+### Jekyll Configuration. No need to touch this. ###
+####################################################
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :compressed # You might prefer to minify using :compressed
+
+# Exclude these files from your production _site
+exclude:
+  - LICENSE
+  - README.md
+  - CNAME
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# Markdown rendering
+markdown: kramdown
