@@ -12,7 +12,7 @@ privacy_policy_link                       : https://house-app.com/policies
 app_icon                                  : assets/appicon.png
 app_name                                  : House Manager
 app_price                                 : Free
-app_description                           : House Manager is an app for iOS & macOS designed to help keep track of progress towards goals. Perfect for tracking almost anything - distance, money, time, weight, and more! Stay on target with history charts showing your recent trends!
+app_description                           : House Manager is an app for iOS & iPadOS designed to be your home's command center, keeping every detail at your fingertips. Save time, prevent costly repairs, and protect your investment!
 
 enable_smart_app_banner                   : true
 
@@ -27,39 +27,27 @@ mastodon_link                             : https://indieapps.space/@shayesapps
 features                                  :
 
   - title                                 : Beautiful Design
-    description                           : Intuitive layout puts progress tracking right at your fingertips
+    description                           : Intuitive layout puts everything right at your fingertips
     fontawesome_icon_name                 : palette
 
-  - title                                 : Widgets
-    description                           : Powerful widgets available right on your Home Screen or Lock Screen
-    fontawesome_icon_name                 : th-large
-
-  - title                                 : Shortcuts
-    description                           : Siri shortcuts integration to unlock even more possibilities
-    fontawesome_icon_name                 : magic
-
-  - title                                 : History
-    description                           : See trends over time and projected completion dates
-    fontawesome_icon_name                 : chart-line
-
-  - title                                 : Automatic Reset
-    description                           : Set trackers to reset every day, week, month, or year
-    fontawesome_icon_name                 : redo
-
-  - title                                 : Quick Actions
-    description                           : Customizable quick actions for each tracker
-    fontawesome_icon_name                 : tachometer-alt
-
-  - title                                 : Smart Formatting
-    description                           : Intelligent formatting for currencies, times, weights, and distances
-    fontawesome_icon_name                 : star
-
-  - title                                 : Categories
-    description                           : Sort your trackers into lists
+  - title                                 : Inventory
+    description                           : Track all your home appliances in one place
     fontawesome_icon_name                 : list
 
+  - title                                 : Maintenance
+    description                           : Smart reminders for routine maintenance tasks
+    fontawesome_icon_name                 : magic
+
+  - title                                 : Projects
+    description                           : Organize home improvement projects
+    fontawesome_icon_name                 : house
+
+  - title                                 : Locations
+    description                           : Sort your inventory by location
+    fontawesome_icon_name                 : location-crosshairs
+
   - title                                 : Multiple Device Support
-    description                           : Available for iOS & macOS devices with seamless syncing
+    description                           : Available for iOS & iPadOS devices with seamless syncing
     fontawesome_icon_name                 : sync
 
 # Theme Settings
