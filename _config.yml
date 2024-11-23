@@ -40,11 +40,11 @@ features                                  :
 
   - title                                 : Projects
     description                           : Organize home improvement projects
-    fontawesome_icon_name                 : house
+    fontawesome_icon_name                 : home
 
   - title                                 : Locations
     description                           : Sort your inventory by location
-    fontawesome_icon_name                 : location-crosshairs
+    fontawesome_icon_name                 : map-marker-alt
 
   - title                                 : Multiple Device Support
     description                           : Available for iOS & iPadOS devices with seamless syncing
