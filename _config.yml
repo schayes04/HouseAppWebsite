@@ -8,7 +8,6 @@ ios_app_country                           : us
 
 appstore_link                             : https://apps.apple.com/app/apple-store/id6569254568
 privacy_policy_link                       : https://house-app.com/policies
-presskit_download_link                    : assets/Progress_Press_Kit.zip
 
 app_icon                                  : assets/appicon.png
 app_name                                  : House Manager
