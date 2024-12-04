@@ -8,6 +8,7 @@ ios_app_country                           : us
 
 appstore_link                             : https://apps.apple.com/app/apple-store/id6569254568
 privacy_policy_link                       : https://house-app.com/policies
+presskit_download_link                    : assets/House_Manager_Press_Kit.zip
 
 app_icon                                  : assets/appicon.png
 app_name                                  : House Manager
@@ -41,6 +42,18 @@ features                                  :
   - title                                 : Projects
     description                           : Organize home improvement projects
     fontawesome_icon_name                 : home
+
+  - title                                 : Attachments
+    description                           : Keep links, files, & photos with your inventory items
+    fontawesome_icon_name                 : link
+
+  - title                                 : History
+    description                           : Keep a log of all your home's maintenance
+    fontawesome_icon_name                 : history
+
+  - title                                 : Notes
+    description                           : Jot down notes for future reference
+    fontawesome_icon_name                 : sticky-note
 
   - title                                 : Locations
     description                           : Sort your inventory by location
