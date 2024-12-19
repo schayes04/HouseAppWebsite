@@ -1,16 +1,17 @@
 {
     "applinks": {
+        "apps": [],
         "details": [
             {
-                "appIDs": [
-                    "C75928FBL3.com.shayesapps.house",
-                    "C75928FBL3.com.shayesapps.house.beta"
-                ],
-                "components": [
-                    {
-                        "/": "/invite/*",
-                        "comment": "Matches any URL whose path starts with /invite/"
-                    }
+                "appID": "C75928FBL3.com.shayesapps.house",
+                "paths": [
+                    "/invite/*"
+                ]
+            },
+            {
+                "appID": "C75928FBL3.com.shayesapps.house.beta",
+                "paths": [
+                    "/invite/*"
                 ]
             }
         ]
