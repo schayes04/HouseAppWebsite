@@ -51,9 +51,9 @@ features                                  :
     description                           : Keep a log of all your home's maintenance
     fontawesome_icon_name                 : history
 
-  - title                                 : Notes
-    description                           : Jot down notes for future reference
-    fontawesome_icon_name                 : sticky-note
+  - title                                 : Home Sharing
+    description                           : Share your home with a partner or roommate.
+    fontawesome_icon_name                 : users
 
   - title                                 : Locations
     description                           : Sort your inventory by location
