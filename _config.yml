@@ -8,6 +8,7 @@ ios_app_country                           : us
 
 appstore_link                             : https://apps.apple.com/app/apple-store/id6569254568
 privacy_policy_link                       : https://house-app.com/policies
+blog_link                                 : https://blog.house-app.com
 presskit_download_link                    : assets/House_Manager_Press_Kit.zip
 
 app_icon                                  : assets/appicon.png
