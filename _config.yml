@@ -44,6 +44,10 @@ features                                  :
     description                           : Organize home improvement projects
     fontawesome_icon_name                 : home
 
+  - title                                 : Paints
+    description                           : Track paint colors & finishes for each room
+    fontawesome_icon_name                 : paint-roller
+
   - title                                 : Attachments
     description                           : Keep links, files, & photos with your inventory items
     fontawesome_icon_name                 : link
@@ -55,10 +59,6 @@ features                                  :
   - title                                 : Home Sharing
     description                           : Share your home with a partner or roommate.
     fontawesome_icon_name                 : users
-
-  - title                                 : Locations
-    description                           : Sort your inventory by location
-    fontawesome_icon_name                 : map-marker-alt
 
   - title                                 : Multiple Device Support
     description                           : Available for iOS & iPadOS devices with seamless syncing
