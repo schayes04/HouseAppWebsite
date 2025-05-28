@@ -14,7 +14,7 @@ presskit_download_link                    : assets/House_Manager_Press_Kit.zip
 app_icon                                  : assets/appicon.png
 app_name                                  : House Manager
 app_price                                 : Free
-app_description                           : House Manager is an app for iOS & iPadOS designed to be your home's command center, keeping every detail at your fingertips. Save time, prevent costly repairs, and protect your investment!
+app_description                           : House Manager is an app for iOS & macOS designed to be your home's command center, keeping every detail at your fingertips. Save time, prevent costly repairs, and protect your investment!
 
 enable_smart_app_banner                   : true
 
@@ -60,7 +60,7 @@ features                                  :
     fontawesome_icon_name                 : users
 
   - title                                 : Multiple Device Support
-    description                           : Available for iOS & iPadOS devices with seamless syncing
+    description                           : Available for iOS, iPadOS, & macOS devices with seamless syncing
     fontawesome_icon_name                 : sync
 
 # Theme Settings
