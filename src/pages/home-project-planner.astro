@@ -1,0 +1,88 @@
+---
+import FeatureLanding from '../components/FeatureLanding.astro';
+import projectImage from '../assets/screenshots-framed/ProjectDetail.png';
+import { appFacts, breadcrumbSchema, type PageSEO } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Home project planner', path: '/home-project-planner/' },
+] as const;
+
+const seo: PageSEO = {
+  title: 'Home Project Planner for Renovations and Repairs',
+  description:
+    'Plan renovation and repair projects with budgets, dates, status, notes, supplies, and lasting project records in House Manager.',
+  canonicalPath: '/home-project-planner/',
+  breadcrumbs,
+  lastReviewed: appFacts.lastReviewed,
+  structuredData: [breadcrumbSchema(breadcrumbs)],
+};
+---
+
+<FeatureLanding
+  {seo}
+  eyebrow="Home project planner"
+  heading="Turn home ideas into clear plans."
+  introduction="House Manager is a home project planner for homeowners organizing renovations, repairs, and improvements. Keep budgets, dates, status, supplies, notes, and project history together from the first idea through completion."
+  image={projectImage}
+  imageAlt="House Manager project detail screen with status, budget, dates, notes, and supplies"
+  imageCaption="A project record keeps status, dates, budget, notes, and supplies together as work progresses."
+  sectionHeading="Give every project a useful home"
+  sectionIntroduction="Capture the decisions and moving pieces that are hard to manage across separate notes, spreadsheets, and conversations."
+  capabilities={[
+    {
+      title: 'Project notes',
+      description: 'Capture plans, decisions, and useful context alongside the rest of the project record.',
+    },
+    {
+      title: 'Budgets and supplies',
+      description: 'Keep expected costs and needed materials visible alongside the work they support.',
+    },
+    {
+      title: 'Timelines and status',
+      description: 'Record dates and progress so you can understand where a project stands.',
+    },
+    {
+      title: 'Lasting records',
+      description: 'Keep notes and project details after the work is done for future reference.',
+    },
+  ]}
+  facts={[
+    { label: 'Best for', value: 'Renovations, repairs, upgrades, and household improvements' },
+    { label: 'Planning', value: 'Dates, status, budgets, notes, and supplies' },
+    { label: 'Records', value: 'Notes, attachments, and completed project details' },
+    { label: 'Sharing', value: 'Home records can be shared with household members' },
+  ]}
+  faqs={[
+    {
+      question: 'What does a home project planner track?',
+      answer: 'A practical home project planner connects dates, costs, supplies, notes, and status so the plan and its history stay together.',
+    },
+    {
+      question: 'Can I use House Manager for a renovation budget?',
+      answer: 'Yes. House Manager supports project budgets alongside dates, status, notes, supplies, and other project records.',
+    },
+    {
+      question: 'Does House Manager keep finished project information?',
+      answer: 'Yes. Project details remain part of your organized home record, which can make later upkeep and planning easier.',
+    },
+  ]}
+  relatedLinks={[
+    {
+      title: 'Maintenance planning',
+      description: 'Separate recurring upkeep from larger, one-time household projects.',
+      path: '/home-maintenance-app/',
+    },
+    {
+      title: 'Home inventory',
+      description: 'Keep appliance and warranty records close to the projects they inform.',
+      path: '/home-inventory-app/',
+    },
+    {
+      title: 'All features',
+      description: 'Explore paint tracking, sharing, PDF reports, and Apple-device support.',
+      path: '/features/',
+    },
+  ]}
+  ctaHeading="Bring the next home project into focus."
+/>

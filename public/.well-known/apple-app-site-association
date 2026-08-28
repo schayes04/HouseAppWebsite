@@ -1,0 +1,28 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "C75928FBL3.com.shayesapps.house",
+                "paths": [
+                    "/invite/*"
+                ]
+            },
+            {
+                "appID": "C75928FBL3.com.shayesapps.house.beta",
+                "paths": [
+                    "/invite-beta/*"
+                ]
+            }
+        ]
+    },
+    "webcredentials": {
+        "apps": [
+            "C75928FBL3.com.shayesapps.house",
+            "C75928FBL3.com.shayesapps.house.beta"
+        ]
+    },
+    "appclips": {
+        "apps": []
+    }
+}

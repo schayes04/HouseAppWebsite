@@ -1,0 +1,88 @@
+---
+import { Picture } from 'astro:assets';
+import dashboardImage from '../assets/screenshots-framed/Dashboard.png';
+import inventoryImage from '../assets/screenshots-framed/Inventory.png';
+import projectImage from '../assets/screenshots-framed/ProjectDetail.png';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { appFacts, breadcrumbSchema, type PageSEO } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Press', path: '/press/' },
+] as const;
+
+const seo: PageSEO = {
+  title: 'House Manager Press Kit and Product Facts',
+  description:
+    'Find House Manager product information, screenshots, developer details, and the downloadable press kit for media coverage.',
+  canonicalPath: '/press/',
+  breadcrumbs,
+  lastReviewed: appFacts.lastReviewed,
+  structuredData: [breadcrumbSchema(breadcrumbs)],
+};
+---
+
+<BaseLayout {seo}>
+  <SiteHeader currentPath="/press/" />
+  <main id="main-content">
+    <Breadcrumbs items={breadcrumbs} />
+    <section class="editorial-hero">
+      <p class="eyebrow">Press resources</p>
+      <h1>House Manager, in brief.</h1>
+      <p class="hero-answer">House Manager is a home management app for iPhone, iPad, and Mac that helps everyday homeowners organize maintenance, inventory, warranties, paint details, and projects. This page provides product information and media assets for editorial use.</p>
+      <div class="inline-actions">
+        <a class="button" href="/assets/House_Manager_Press_Kit.zip" download>Download the press kit</a>
+        <a href={appFacts.supportEmailUrl}>Request more information</a>
+      </div>
+    </section>
+
+    <section class="press-facts" aria-labelledby="press-facts-heading">
+      <div>
+        <p class="eyebrow">Product information</p>
+        <h2 id="press-facts-heading">House Manager at a glance</h2>
+      </div>
+      <dl>
+        <div><dt>Product</dt><dd>{appFacts.name}</dd></div>
+        <div><dt>Definition</dt><dd>{appFacts.definition}</dd></div>
+        <div><dt>Platforms</dt><dd>{appFacts.platforms.join(', ')}</dd></div>
+        <div><dt>Price</dt><dd>Free download with optional in-app purchases</dd></div>
+        <div><dt>Developer</dt><dd><a href={appFacts.developerUrl}>{appFacts.developer}</a></dd></div>
+        <div><dt>Download</dt><dd><a href={appFacts.appStoreUrl}>View on the App Store</a></dd></div>
+      </dl>
+    </section>
+
+    <section class="screenshot-gallery" aria-labelledby="screenshots-heading">
+      <p class="eyebrow">Product imagery</p>
+      <h2 id="screenshots-heading">House Manager screenshots</h2>
+      <div class="gallery-grid">
+        <figure>
+          <Picture src={dashboardImage} formats={['avif', 'webp']} fallbackFormat="png" widths={[300, 480]} sizes="(max-width: 760px) 80vw, 30vw" alt="House Manager dashboard with home tasks, projects, and warranty reminders" loading="lazy" />
+          <figcaption>The dashboard summarizes active home records and upcoming work.</figcaption>
+        </figure>
+        <figure>
+          <Picture src={inventoryImage} formats={['avif', 'webp']} fallbackFormat="png" widths={[300, 480]} sizes="(max-width: 760px) 80vw, 30vw" alt="House Manager inventory grouped by room" loading="lazy" />
+          <figcaption>Inventory records can be organized by location and item.</figcaption>
+        </figure>
+        <figure>
+          <Picture src={projectImage} formats={['avif', 'webp']} fallbackFormat="png" widths={[300, 480]} sizes="(max-width: 760px) 80vw, 30vw" alt="House Manager project record with dates, budget, notes, and supplies" loading="lazy" />
+          <figcaption>Project records keep important planning details together.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="press-contact" aria-labelledby="press-contact-heading">
+      <div>
+        <p class="eyebrow">Media contact</p>
+        <h2 id="press-contact-heading">Questions or additional assets?</h2>
+      </div>
+      <p>
+        Contact <a href={appFacts.supportEmailUrl}>{appFacts.supportAddress}</a> for product information,
+        interview requests, or additional press materials.
+      </p>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

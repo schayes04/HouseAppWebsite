@@ -1,0 +1,26 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  heading?: string;
+  items: readonly FaqItem[];
+}
+
+const { heading = 'Common questions', items } = Astro.props;
+---
+
+<section class="faq-section" aria-labelledby="faq-heading">
+  <p class="eyebrow">Helpful answers</p>
+  <h2 id="faq-heading">{heading}</h2>
+  <div class="faq-list">
+    {items.map((item) => (
+      <article>
+        <h3>{item.question}</h3>
+        <p>{item.answer}</p>
+      </article>
+    ))}
+  </div>
+</section>

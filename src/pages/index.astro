@@ -1,0 +1,125 @@
+---
+import { Picture } from 'astro:assets';
+import dashboardImage from '../assets/screenshots-framed/Dashboard.png';
+import AppStoreCTA from '../components/AppStoreCTA.astro';
+import FaqList from '../components/FaqList.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { appFacts, siteUrl, softwareApplicationSchema, type PageSEO } from '../config/site';
+
+const seo: PageSEO = {
+  title: 'House Manager — Home Management App for Apple Devices',
+  description:
+    'Organize home maintenance, inventory, warranties, and renovation projects with House Manager for iPhone, iPad, and Mac.',
+  canonicalPath: '/',
+  lastReviewed: appFacts.lastReviewed,
+  structuredData: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: appFacts.name,
+      url: siteUrl,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: appFacts.developer,
+      url: appFacts.developerUrl,
+    },
+    softwareApplicationSchema,
+  ],
+};
+---
+
+<BaseLayout {seo}>
+  <SiteHeader currentPath="/" />
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <p class="eyebrow">A calmer way to run your home</p>
+        <h1 id="hero-heading">Your home, organized.</h1>
+        <p class="hero-answer">
+          {appFacts.definition} It helps everyday homeowners stay ahead of upkeep and keep important home details easy to find.
+        </p>
+        <div class="hero-actions">
+          <a class="store-link" href={appFacts.appStoreUrl} aria-label="Download House Manager on the App Store">
+            <img src="/assets/appstore.png" width="220" height="75" alt="Download on the App Store" />
+          </a>
+        </div>
+        <ul class="platform-list" aria-label="Available platforms">
+          {appFacts.platforms.map((platform) => <li>{platform}</li>)}
+        </ul>
+      </div>
+
+      <figure class="hero-visual">
+        <div class="screenshot-frame">
+          <Picture
+            src={dashboardImage}
+            formats={['avif', 'webp']}
+            fallbackFormat="png"
+            widths={[360, 540, 720]}
+            sizes="(max-width: 760px) 78vw, 390px"
+            alt="House Manager dashboard showing home projects, inventory, and maintenance tasks"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+        <figcaption>See upcoming tasks and essential home records from one clear dashboard.</figcaption>
+      </figure>
+    </section>
+
+    <section class="feature-section" id="what-it-manages" aria-labelledby="manage-heading">
+      <p class="eyebrow">One reliable home record</p>
+      <h2 id="manage-heading">The details that usually end up everywhere</h2>
+      <div class="feature-grid">
+        <article>
+          <span class="feature-number">01</span>
+          <h3>Maintenance</h3>
+          <p>Plan recurring upkeep, get reminders, and build a useful maintenance history over time.</p>
+          <a href="/home-maintenance-app/">Explore maintenance</a>
+        </article>
+        <article>
+          <span class="feature-number">02</span>
+          <h3>Inventory</h3>
+          <p>Save appliances, purchase details, receipts, warranties, and attachments where they belong.</p>
+          <a href="/home-inventory-app/">Explore inventory</a>
+        </article>
+        <article>
+          <span class="feature-number">03</span>
+          <h3>Projects</h3>
+          <p>Keep renovation budgets, dates, status, notes, and decisions connected to each project.</p>
+          <a href="/home-project-planner/">Explore projects</a>
+        </article>
+      </div>
+    </section>
+
+    <FaqList
+      heading="Questions homeowners ask before getting started"
+      items={[
+        {
+          question: 'What is a home management app?',
+          answer: 'A home management app organizes the recurring work, physical items, warranties, documents, and improvement projects connected to your home in one searchable record.',
+        },
+        {
+          question: 'What can I track in House Manager?',
+          answer: 'House Manager covers maintenance, inventory, warranties, projects, rooms, paint details, attachments, home sharing, and PDF reports.',
+        },
+        {
+          question: 'Is House Manager free?',
+          answer: 'House Manager is free to download and offers optional in-app purchases for premium features.',
+        },
+        {
+          question: 'Which devices can I use?',
+          answer: 'House Manager is available for iPhone, iPad, and Mac through the Apple App Store.',
+        },
+      ]}
+    />
+
+    <AppStoreCTA heading="Give your home a memory." copy="Start organizing your home on iPhone, iPad, or Mac." />
+
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

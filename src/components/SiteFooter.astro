@@ -1,0 +1,17 @@
+---
+import { appFacts } from '../config/site';
+---
+
+<footer class="site-footer">
+  <div>
+    <a class="footer-brand" href="/">House Manager</a>
+    <p>Home details, thoughtfully kept.</p>
+  </div>
+  <nav aria-label="Footer navigation">
+    <a href="/press/">Press</a>
+    <a href="/support/">Support</a>
+    <a href="/policies/">Policies</a>
+    <a href={appFacts.supportEmailUrl}>Email us</a>
+  </nav>
+  <p>© {new Date().getFullYear()} {appFacts.developer}</p>
+</footer>

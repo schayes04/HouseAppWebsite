@@ -1,0 +1,144 @@
+---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import AppStoreCTA from './AppStoreCTA.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import FaqList from './FaqList.astro';
+import SiteFooter from './SiteFooter.astro';
+import SiteHeader from './SiteHeader.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { PageSEO } from '../config/site';
+
+interface Capability {
+  title: string;
+  description: string;
+}
+
+interface Fact {
+  label: string;
+  value: string;
+}
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface RelatedLink {
+  title: string;
+  description: string;
+  path: string;
+}
+
+interface Props {
+  seo: PageSEO;
+  eyebrow: string;
+  heading: string;
+  introduction: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  imageCaption: string;
+  sectionHeading: string;
+  sectionIntroduction: string;
+  capabilities: readonly Capability[];
+  facts: readonly Fact[];
+  faqs: readonly FaqItem[];
+  relatedLinks: readonly RelatedLink[];
+  ctaHeading: string;
+}
+
+const {
+  seo,
+  eyebrow,
+  heading,
+  introduction,
+  image,
+  imageAlt,
+  imageCaption,
+  sectionHeading,
+  sectionIntroduction,
+  capabilities,
+  facts,
+  faqs,
+  relatedLinks,
+  ctaHeading,
+} = Astro.props;
+---
+
+<BaseLayout {seo}>
+  <SiteHeader currentPath={seo.canonicalPath} />
+  <main id="main-content">
+    {seo.breadcrumbs && <Breadcrumbs items={seo.breadcrumbs} />}
+    <section class="page-hero" aria-labelledby="page-heading">
+      <div>
+        <p class="eyebrow">{eyebrow}</p>
+        <h1 id="page-heading">{heading}</h1>
+        <p class="hero-answer">{introduction}</p>
+        <a class="button" href="#capabilities">See what it keeps track of</a>
+      </div>
+      <figure class="page-visual">
+        <Picture
+          src={image}
+          formats={['avif', 'webp']}
+          fallbackFormat="png"
+          widths={[360, 540, 720]}
+          sizes="(max-width: 760px) 78vw, 420px"
+          alt={imageAlt}
+          loading="eager"
+          fetchpriority="high"
+        />
+        <figcaption>{imageCaption}</figcaption>
+      </figure>
+    </section>
+
+    <section class="capability-section" id="capabilities" aria-labelledby="capability-heading">
+      <div class="section-intro">
+        <p class="eyebrow">Made for real homeownership</p>
+        <h2 id="capability-heading">{sectionHeading}</h2>
+        <p>{sectionIntroduction}</p>
+      </div>
+      <div class="capability-grid">
+        {capabilities.map((capability, index) => (
+          <article>
+            <span class="feature-number">{String(index + 1).padStart(2, '0')}</span>
+            <h3>{capability.title}</h3>
+            <p>{capability.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="facts-section" aria-labelledby="facts-heading">
+      <div>
+        <p class="eyebrow">At a glance</p>
+        <h2 id="facts-heading">What to expect</h2>
+      </div>
+      <dl>
+        {facts.map((fact) => (
+          <div>
+            <dt>{fact.label}</dt>
+            <dd>{fact.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <FaqList items={faqs} />
+
+    <section class="related-section" aria-labelledby="related-heading">
+      <p class="eyebrow">Keep exploring</p>
+      <h2 id="related-heading">More ways to manage your home</h2>
+      <div class="related-grid">
+        {relatedLinks.map((link) => (
+          <a href={link.path}>
+            <span>{link.title}</span>
+            <p>{link.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <AppStoreCTA heading={ctaHeading} />
+  </main>
+  <SiteFooter />
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+import { Picture } from 'astro:assets';
+import appIcon from '../assets/appicon.png';
+import { appFacts } from '../config/site';
+
+interface Props {
+  heading?: string;
+  copy?: string;
+}
+
+const {
+  heading = 'Put your home details in one dependable place.',
+  copy = 'Download House Manager free on the App Store for iPhone, iPad, and Mac.',
+} = Astro.props;
+---
+
+<section class="closing-cta" aria-labelledby="download-heading">
+  <Picture src={appIcon} formats={['avif', 'webp']} fallbackFormat="png" widths={[88, 176]} sizes="88px" alt="House Manager app icon" />
+  <div>
+    <p class="eyebrow">Free to download</p>
+    <h2 id="download-heading">{heading}</h2>
+    <p>{copy}</p>
+  </div>
+  <a class="button" href={appFacts.appStoreUrl}>Get House Manager</a>
+</section>

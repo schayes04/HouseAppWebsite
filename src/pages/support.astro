@@ -1,0 +1,82 @@
+---
+import { Picture } from 'astro:assets';
+import dashboardImage from '../assets/screenshots-framed/Dashboard.png';
+import AppStoreCTA from '../components/AppStoreCTA.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FaqList from '../components/FaqList.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { appFacts, breadcrumbSchema, type PageSEO } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Support', path: '/support/' },
+] as const;
+
+const seo: PageSEO = {
+  title: 'House Manager Support and Common Questions',
+  description:
+    'Get House Manager support, answers about devices, subscriptions, sharing, and data, plus direct links to product policies.',
+  canonicalPath: '/support/',
+  breadcrumbs,
+  lastReviewed: appFacts.lastReviewed,
+  structuredData: [breadcrumbSchema(breadcrumbs)],
+};
+---
+
+<BaseLayout {seo}>
+  <SiteHeader currentPath="/support/" />
+  <main id="main-content">
+    <Breadcrumbs items={breadcrumbs} />
+    <section class="support-hero">
+      <div>
+        <p class="eyebrow">House Manager support</p>
+        <h1>Help for your home hub.</h1>
+        <p class="hero-answer">House Manager support helps customers with account, subscription, sharing, and product questions for the iPhone, iPad, and Mac app. Include enough detail to identify what you were trying to do.</p>
+        <a class="button" href={appFacts.supportEmailUrl}>Email {appFacts.supportAddress}</a>
+      </div>
+      <figure class="support-visual">
+        <Picture src={dashboardImage} formats={['avif', 'webp']} fallbackFormat="png" widths={[360, 540, 720]} sizes="(max-width: 760px) 84vw, 480px" alt="House Manager dashboard showing upcoming home tasks and project records" loading="eager" fetchpriority="high" />
+        <figcaption>The dashboard gives support conversations a clear starting point for tasks, projects, and home records.</figcaption>
+      </figure>
+    </section>
+
+    <section class="support-details" aria-labelledby="before-email-heading">
+      <div>
+        <p class="eyebrow">Faster support</p>
+        <h2 id="before-email-heading">What to include in your message</h2>
+        <p>A short description of the issue, the device you are using, and the app version can make troubleshooting more efficient. Do not email passwords or other sensitive information.</p>
+      </div>
+      <ul>
+        <li>Your iPhone, iPad, or Mac model</li>
+        <li>Your operating-system version</li>
+        <li>The House Manager version installed on your device</li>
+        <li>What you expected and what happened instead</li>
+      </ul>
+    </section>
+
+    <FaqList
+      heading="Common House Manager questions"
+      items={[
+        { question: 'Which devices support House Manager?', answer: 'House Manager is available for iPhone, iPad, and Mac. Current operating-system requirements are listed on the App Store.' },
+        { question: 'Is House Manager free?', answer: 'The app is free to download and includes optional in-app purchases for premium features.' },
+        { question: 'Can more than one person manage a home?', answer: 'Yes. Home sharing allows household members to collaborate with owner and editor roles.' },
+        { question: 'How do I manage or cancel a subscription?', answer: 'Subscriptions are managed through your Apple account. You can review or cancel them from Apple device subscription settings.' },
+        { question: 'Where can I read the privacy policy and terms?', answer: 'The current Privacy Policy and Terms of Use are available on the Policies page linked below.' },
+      ]}
+    />
+
+    <section class="policy-callout">
+      <div>
+        <p class="eyebrow">Privacy and terms</p>
+        <h2>Product policies</h2>
+        <p>Review how House Manager handles information and the terms that apply to premium subscriptions.</p>
+      </div>
+      <a class="button secondary-button" href="/policies/">Read the policies</a>
+    </section>
+
+    <AppStoreCTA heading="Keep your app up to date." copy="Open the App Store to download House Manager or check for the newest release." />
+  </main>
+  <SiteFooter />
+</BaseLayout>

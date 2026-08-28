@@ -1,0 +1,88 @@
+---
+import FeatureLanding from '../components/FeatureLanding.astro';
+import inventoryImage from '../assets/screenshots-framed/Inventory.png';
+import { appFacts, breadcrumbSchema, type PageSEO } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Home inventory app', path: '/home-inventory-app/' },
+] as const;
+
+const seo: PageSEO = {
+  title: 'Home Inventory App for Appliances and Warranties',
+  description:
+    'Organize appliances, purchase details, receipts, warranties, attachments, and home inventory reports with House Manager.',
+  canonicalPath: '/home-inventory-app/',
+  breadcrumbs,
+  lastReviewed: appFacts.lastReviewed,
+  structuredData: [breadcrumbSchema(breadcrumbs)],
+};
+---
+
+<FeatureLanding
+  {seo}
+  eyebrow="Home inventory app"
+  heading="Know what your home owns."
+  introduction="House Manager is a home inventory app for homeowners who need a dependable place for appliances, purchase details, receipts, warranties, and related files. It keeps the facts you will need later close to the room and item they describe."
+  image={inventoryImage}
+  imageAlt="House Manager inventory screen listing appliances by room"
+  imageCaption="Inventory items can be grouped by location, making appliances and their details easier to browse."
+  sectionHeading="Useful details, attached to the right item"
+  sectionIntroduction="Build a structured inventory you can use during maintenance, warranty questions, household planning, or a move."
+  capabilities={[
+    {
+      title: 'Appliance records',
+      description: 'Save the identifying and purchase information that is difficult to reconstruct later.',
+    },
+    {
+      title: 'Receipts and attachments',
+      description: 'Keep supporting photos, files, and links with the inventory item they belong to.',
+    },
+    {
+      title: 'Warranty tracking',
+      description: 'Record warranty information and keep important coverage dates within reach.',
+    },
+    {
+      title: 'PDF reports',
+      description: 'Create portable inventory reports when you need a clear record beyond the app.',
+    },
+  ]}
+  facts={[
+    { label: 'Best for', value: 'Appliances, household items, and supporting records' },
+    { label: 'Details', value: 'Purchase information, receipts, warranties, files, and photos' },
+    { label: 'Organization', value: 'Inventory grouped by home and location' },
+    { label: 'Export', value: 'PDF inventory reports' },
+  ]}
+  faqs={[
+    {
+      question: 'What should I put in a home inventory app?',
+      answer: 'Start with high-value appliances and items, then add model or serial information, purchase details, receipts, warranty records, photos, and related maintenance.',
+    },
+    {
+      question: 'Can House Manager store receipts and warranties?',
+      answer: 'Yes. House Manager can keep receipts, warranty information, files, links, and photos connected to inventory items.',
+    },
+    {
+      question: 'Can I make a home inventory report?',
+      answer: 'Yes. House Manager can create PDF reports for inventory records so the information can be reviewed or shared outside the app.',
+    },
+  ]}
+  relatedLinks={[
+    {
+      title: 'Maintenance reminders',
+      description: 'Stay on top of the care your appliances and home require.',
+      path: '/home-maintenance-app/',
+    },
+    {
+      title: 'Home projects',
+      description: 'Move from a list of household needs to an organized project plan.',
+      path: '/home-project-planner/',
+    },
+    {
+      title: 'All features',
+      description: 'See how inventory works with sharing, reports, and syncing.',
+      path: '/features/',
+    },
+  ]}
+  ctaHeading="Start a home inventory you can actually use."
+/>

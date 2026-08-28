@@ -1,0 +1,88 @@
+---
+import FeatureLanding from '../components/FeatureLanding.astro';
+import dashboardImage from '../assets/screenshots-framed/Dashboard.png';
+import { appFacts, breadcrumbSchema, type PageSEO } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Home maintenance app', path: '/home-maintenance-app/' },
+] as const;
+
+const seo: PageSEO = {
+  title: 'Home Maintenance App and Reminder Tracker',
+  description:
+    'Plan recurring home maintenance, remember preventive upkeep, and keep a useful task history with House Manager for Apple devices.',
+  canonicalPath: '/home-maintenance-app/',
+  breadcrumbs,
+  lastReviewed: appFacts.lastReviewed,
+  structuredData: [breadcrumbSchema(breadcrumbs)],
+};
+---
+
+<FeatureLanding
+  {seo}
+  eyebrow="Home maintenance app"
+  heading="Stay ahead of home maintenance."
+  introduction="House Manager is a home maintenance app for homeowners who want recurring reminders, organized task records, and a clearer view of preventive upkeep. It turns the jobs that are easy to forget into a plan you can actually follow."
+  image={dashboardImage}
+  imageAlt="House Manager dashboard with upcoming maintenance tasks for a home"
+  imageCaption="The dashboard brings upcoming maintenance, active projects, and warranty reminders into one view."
+  sectionHeading="A practical routine for preventive upkeep"
+  sectionIntroduction="Record what needs attention, when it is due, and what happened last time so home care becomes easier to repeat."
+  capabilities={[
+    {
+      title: 'Smart reminders',
+      description: 'Keep routine jobs visible before they become urgent, with due dates that fit the task.',
+    },
+    {
+      title: 'Recurring tasks',
+      description: 'Set up seasonal and repeating maintenance so the next cycle is not left to memory.',
+    },
+    {
+      title: 'Maintenance history',
+      description: 'Build a chronological record that helps you understand what was done and when.',
+    },
+    {
+      title: 'Connected home records',
+      description: 'Keep maintenance alongside the inventory items, warranties, rooms, and projects it relates to.',
+    },
+  ]}
+  facts={[
+    { label: 'Best for', value: 'Routine, seasonal, and preventive home upkeep' },
+    { label: 'Records', value: 'Tasks, due dates, reminders, and maintenance history' },
+    { label: 'Works on', value: 'iPhone, iPad, and Mac' },
+    { label: 'Price', value: 'Free download with optional in-app purchases' },
+  ]}
+  faqs={[
+    {
+      question: 'What is a home maintenance app?',
+      answer: 'A home maintenance app keeps routine upkeep, reminders, and completed work in one organized record instead of relying on notes, calendars, or memory.',
+    },
+    {
+      question: 'Can House Manager track repeating maintenance?',
+      answer: 'Yes. House Manager supports recurring maintenance tasks and reminders for preventive jobs that repeat over time.',
+    },
+    {
+      question: 'Does it keep a maintenance history?',
+      answer: 'Yes. Completed maintenance can become a useful record of what was done around your home.',
+    },
+  ]}
+  relatedLinks={[
+    {
+      title: 'Home inventory',
+      description: 'Connect upkeep to appliances, purchase details, and warranties.',
+      path: '/home-inventory-app/',
+    },
+    {
+      title: 'Project planning',
+      description: 'Organize the larger jobs that go beyond routine maintenance.',
+      path: '/home-project-planner/',
+    },
+    {
+      title: 'All features',
+      description: 'Explore sharing, paint records, reports, and Apple-device support.',
+      path: '/features/',
+    },
+  ]}
+  ctaHeading="Make the next maintenance task easier to remember."
+/>

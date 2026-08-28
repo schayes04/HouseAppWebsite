@@ -1,0 +1,96 @@
+---
+import FeatureLanding from '../components/FeatureLanding.astro';
+import paintImage from '../assets/screenshots-framed/LocationDetail.png';
+import { appFacts, breadcrumbSchema, type PageSEO } from '../config/site';
+
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Features', path: '/features/' },
+] as const;
+
+const seo: PageSEO = {
+  title: 'House Manager Features for an Organized Home',
+  description:
+    'Explore House Manager features including paint tracking, home sharing, attachments, PDF reports, syncing, and support for iPhone, iPad, and Mac.',
+  canonicalPath: '/features/',
+  breadcrumbs,
+  lastReviewed: appFacts.lastReviewed,
+  structuredData: [breadcrumbSchema(breadcrumbs)],
+};
+---
+
+<FeatureLanding
+  {seo}
+  eyebrow="House Manager features"
+  heading="More than a list of chores."
+  introduction="House Manager connects the records that make a home easier to understand: maintenance, inventory, warranties, paint colors, projects, files, and shared access. It is designed for homeowners who want one clear system across their Apple devices."
+  image={paintImage}
+  imageAlt="House Manager room detail screen showing recorded paint colors and finishes"
+  imageCaption="Room records can include paint brand, color, code, finish, and notes for easier touch-ups later."
+  sectionHeading="Small details that save future effort"
+  sectionIntroduction="The app keeps practical information connected to the home, room, item, or project where it will make sense later."
+  capabilities={[
+    {
+      title: 'Paint tracking',
+      description: 'Record paint colors, codes, finishes, and room details before the can or label disappears.',
+    },
+    {
+      title: 'Home sharing',
+      description: 'Share a home with a partner or roommate so important records are not held by one person.',
+    },
+    {
+      title: 'PDF reports',
+      description: 'Create portable reports for inventory, paint, and project information.',
+    },
+    {
+      title: 'Files and photos',
+      description: 'Attach supporting links, documents, and images to the records that need them.',
+    },
+    {
+      title: 'Multiple homes',
+      description: 'Keep separate records for more than one property without mixing their details.',
+    },
+    {
+      title: 'Apple-device syncing',
+      description: 'Use House Manager on iPhone, iPad, and Mac with your information kept in sync.',
+    },
+  ]}
+  facts={[
+    { label: 'Platforms', value: 'iPhone, iPad, and Mac' },
+    { label: 'Core areas', value: 'Maintenance, inventory, warranties, projects, rooms, and paint' },
+    { label: 'Collaboration', value: 'Home sharing with household members' },
+    { label: 'Portability', value: 'PDF reports for inventory, paint, and projects' },
+  ]}
+  faqs={[
+    {
+      question: 'Can House Manager track paint colors?',
+      answer: 'Yes. You can record paint information by room, including useful details such as brand, color, code, and finish.',
+    },
+    {
+      question: 'Can I share my home records with someone else?',
+      answer: 'Yes. Home sharing is designed for partners, roommates, or others who help manage the same household.',
+    },
+    {
+      question: 'Which devices support House Manager?',
+      answer: 'House Manager is available on iPhone, iPad, and Mac through the Apple App Store.',
+    },
+  ]}
+  relatedLinks={[
+    {
+      title: 'Maintenance app',
+      description: 'Plan recurring work and preserve a useful upkeep history.',
+      path: '/home-maintenance-app/',
+    },
+    {
+      title: 'Inventory app',
+      description: 'Organize appliances, purchase details, receipts, and warranties.',
+      path: '/home-inventory-app/',
+    },
+    {
+      title: 'Project planner',
+      description: 'Bring budgets, dates, notes, and project records together.',
+      path: '/home-project-planner/',
+    },
+  ]}
+  ctaHeading="Build a clearer record of your home."
+/>

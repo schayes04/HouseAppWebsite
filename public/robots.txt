@@ -1,0 +1,41 @@
+User-agent: *
+Allow: /
+Disallow: /invite
+
+User-agent: Googlebot
+Allow: /
+Disallow: /invite
+
+User-agent: Bingbot
+Allow: /
+Disallow: /invite
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /invite
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /invite
+
+User-agent: Applebot
+Allow: /
+Disallow: /invite
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /invite
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+Sitemap: https://house-app.com/sitemap-index.xml

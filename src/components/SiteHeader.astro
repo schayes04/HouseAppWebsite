@@ -1,0 +1,32 @@
+---
+import { Picture } from 'astro:assets';
+import appIcon from '../assets/appicon.png';
+import { appFacts, navigation } from '../config/site';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+---
+
+<header class="site-header">
+  <a class="brand" href="/" aria-label="House Manager home">
+    <Picture
+      src={appIcon}
+      formats={['avif', 'webp']}
+      fallbackFormat="png"
+      widths={[48, 96]}
+      sizes="48px"
+      alt=""
+      loading="eager"
+    />
+    <span>House Manager</span>
+  </a>
+  <nav aria-label="Primary navigation">
+    {navigation.map((item) => (
+      <a href={item.path} aria-current={currentPath === item.path ? 'page' : undefined}>{item.label}</a>
+    ))}
+    <a class="nav-download" href={appFacts.appStoreUrl}>Download free</a>
+  </nav>
+</header>
