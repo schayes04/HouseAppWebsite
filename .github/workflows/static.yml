@@ -25,7 +25,7 @@ jobs:
       - name: Type-check, build, validate, and upload site output
         uses: withastro/action@v6
         with:
-          node-version: 24
+          node-version: '26.8.2'
           package-manager: npm
           build-cmd: npm run test:ci
 

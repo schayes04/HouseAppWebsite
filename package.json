@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=26.8.2"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -13,13 +16,13 @@
     "lighthouse": "lhci autorun"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.6.0",
-    "astro": "^5.13.5",
-    "sharp": "^0.34.3"
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.2",
+    "sharp": "^0.35.4"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.4",
+    "@astrojs/check": "^0.9.10",
     "@lhci/cli": "^0.15.1",
-    "typescript": "^5.9.2"
+    "typescript": "^6.0.3"
   }
 }

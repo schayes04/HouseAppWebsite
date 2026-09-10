@@ -4,10 +4,14 @@ The public marketing site for [House Manager](https://house-app.com), built as a
 
 ## Local development
 
+Use Node.js 26.8.2, pinned in `.node-version` and the GitHub Pages workflow. With fnm, run `fnm use --install-if-missing` to select it.
+
 ```sh
-npm install
+npm ci
 npm run dev
 ```
+
+TypeScript stays on the latest 6.x release because `@astrojs/check` does not yet support TypeScript 7.
 
 The production verification path is:
 
