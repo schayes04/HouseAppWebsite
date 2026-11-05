@@ -40,7 +40,7 @@ export const appFacts: AppFacts = {
   developerUrl: 'https://www.shayesapps.com',
   supportAddress: 'support@shayesapps.com',
   supportEmailUrl: 'mailto:support@shayesapps.com?subject=House%20Manager',
-  socialImage: '/assets/house-manager-social-card.png',
+  socialImage: '/assets/house-manager-social-card.png?v=2',
   lastReviewed: '2026-08-26',
 };
 

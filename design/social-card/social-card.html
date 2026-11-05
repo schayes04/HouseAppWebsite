@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+  Source for public/assets/house-manager-social-card.png (1200×630 Open Graph image).
+  Render with: node design/social-card/render.mjs
+  After changing the image, bump the ?v= query on appFacts.socialImage in src/config/site.ts
+  so Messages, Slack, and Facebook fetch the new file instead of a cached copy.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root {
+        --ink: #261b13;
+        --cream: #fffaf1;
+        --amber: #df8d24;
+        --amber-bright: #f2a640;
+        --amber-light: #f7d9a7;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      html, body { width: 1200px; height: 630px; overflow: hidden; }
+      body {
+        font-family: "Inter Display", "Inter", -apple-system, "SF Pro Display", sans-serif;
+        color: var(--cream);
+        -webkit-font-smoothing: antialiased;
+      }
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 78% 40%, rgb(223 141 36 / 42%), transparent 460px),
+          linear-gradient(160deg, #2f2218, #1b130d);
+      }
+      .copy { position: absolute; left: 80px; top: 78px; width: 640px; }
+      .brand { display: flex; align-items: center; gap: 18px; }
+      .brand img { width: 72px; height: 72px; border-radius: 17px; box-shadow: 0 8px 22px rgb(0 0 0 / 35%); }
+      .brand span { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; }
+      h1 { margin-top: 62px; font-size: 80px; line-height: 1; font-weight: 800; letter-spacing: -0.04em; }
+      h1 em { font-style: normal; color: var(--amber-bright); }
+      ul { display: flex; flex-wrap: wrap; gap: 12px; width: 660px; margin-top: 34px; padding: 0; list-style: none; }
+      li { padding: 10px 19px; border: 1.5px solid rgb(247 217 167 / 35%); border-radius: 999px; font-size: 22px; font-weight: 600; color: var(--amber-light); }
+      .platforms { position: absolute; left: 80px; bottom: 62px; font-size: 21px; font-weight: 600; letter-spacing: 0.01em; color: var(--amber-bright); }
+      .phone { position: absolute; right: 90px; top: 62px; width: 330px; transform: rotate(4deg); filter: drop-shadow(0 30px 60px rgb(0 0 0 / 55%)); }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="copy">
+        <div class="brand"><img src="../../src/assets/appicon.png" alt="" /><span>House Manager</span></div>
+        <h1>Your whole home,<br /><em>in one place.</em></h1>
+        <ul>
+          <li>Maintenance</li>
+          <li>Inventory</li>
+          <li>Warranties</li>
+          <li>Projects</li>
+        </ul>
+      </div>
+      <div class="platforms">Available on iPhone, iPad, and Mac</div>
+      <img class="phone" src="../../src/assets/screenshots-framed/Dashboard.png" alt="" />
+    </div>
+  </body>
+</html>

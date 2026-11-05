@@ -27,6 +27,10 @@ Run `npm run lighthouse` after a production build to check the homepage and thre
 
 Visible product facts, metadata, and structured data use `src/config/site.ts` as their shared source. Update price wording or platform availability only after checking the US App Store listing. Change `lastReviewed` only when the factual product information has been reviewed.
 
+## Social card
+
+`public/assets/house-manager-social-card.png` is the 1200×630 link preview image for every page, including invite links. Its source is `design/social-card/social-card.html`. Edit that file, run `node design/social-card/render.mjs` (needs Playwright with Chromium), then bump the `?v=` query on `appFacts.socialImage` in `src/config/site.ts` so chat apps and social sites fetch the new image instead of a cached copy.
+
 ## Production contracts
 
 - `public/CNAME` preserves the `house-app.com` custom domain.
