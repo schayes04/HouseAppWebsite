@@ -1,0 +1,56 @@
+---
+import { appFacts, absoluteUrl, siteUrl } from '../config/site';
+
+interface Props {
+  /** Route path of the invite page, used for og:url so link unfurlers don't swap in homepage metadata. */
+  path: string;
+  title: string;
+  description: string;
+}
+
+const { path, title, description } = Astro.props;
+const pageUrl = absoluteUrl(path);
+const homeUrl = `${siteUrl}/`;
+const socialImage = absoluteUrl(appFacts.socialImage);
+const iconImage = absoluteUrl('/assets/appicon.png');
+const imageAlt = `${appFacts.name} — home maintenance, inventory, warranties, and projects in one place`;
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href={homeUrl} />
+    <link rel="icon" type="image/png" href="/assets/appicon.png" />
+    <link rel="apple-touch-icon" href={iconImage} />
+    <meta name="apple-itunes-app" content="app-id=6569254568" />
+
+    <!-- Link previews (iMessage, Slack, WhatsApp, etc.) read these without running JS. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={appFacts.name} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:secure_url" content={socialImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+
+    <meta http-equiv="refresh" content={`0; url=${homeUrl}`} />
+  </head>
+  <body>
+    <p>Continuing to <a href={homeUrl}>{appFacts.name}</a>…</p>
+  </body>
+</html>

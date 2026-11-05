@@ -61,6 +61,10 @@ for (const file of htmlFiles) {
 
   if (isInvite) {
     if (robots !== 'noindex,follow') fail(`${page}: invite route must be noindex,follow`);
+    // Invite links are shared in Messages and other chat apps; keep a rich, JS-free link preview.
+    for (const property of ['og:title', 'og:description', 'og:image', 'og:url']) {
+      if (!html.includes(`<meta property="${property}" content="`)) fail(`${page}: invite route is missing ${property}`);
+    }
   } else {
     const description = matchOne(html, /<meta name="description" content="([^"]+)">/g, 'meta description', page);
     const h1Count = (html.match(/<h1(?:\s|>)/g) ?? []).length;
